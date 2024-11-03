@@ -1,5 +1,5 @@
-import { MoviesResultObject } from '../../types/TMDB/movies/movies.types';
-import { MovieDetailsObject } from '../../types/TMDB/movies/movies_details_type';
+import { MoviesResultObject } from '../../../../../packages/types/TMDB/movies/movies.types';
+import { MovieDetailsObject } from '../../../../../packages/types/TMDB/movies/movies_details_type';
 import {
   MoviesAlternativeTitles,
   MoviesCredits,
@@ -15,7 +15,7 @@ import {
   MoviesTranslations,
   MoviesVideos,
   MoviesWatchProviders,
-} from '../../types/TMDB/movies/movies_details_other_type';
+} from '../../../../../packages/types/TMDB/movies/movies_details_other_type';
 
 
 export type MovieList = 'now_playing' | 'popular' | 'top_rated' | 'upcoming';
@@ -145,7 +145,7 @@ export class MoviesService {
   //Get Movie Inclueded List by deifned id
   async getMoviesIncludedListsByID(
     id: number,
-    page = 1,
+    page = "1",
   ): Promise<MoviesIncludedList> {
     const url = `${this.originUrl}${id}/lists?page=${page}`;
 
@@ -163,7 +163,7 @@ export class MoviesService {
   //Get Movie Recommendations by deifned id
   async getMoviesRecommendationsByID(
     id: number,
-    page = 1,
+    page = "1",
   ): Promise<MoviesRecomendations> {
     const url = `${this.originUrl}${id}/recommendations?language=${this.language}&region=${this.region}&page=${page}`;
 
@@ -181,7 +181,7 @@ export class MoviesService {
   //Get Movie Release Dates by deifned id
   async getMoviesReleaseDatesByID(
     id: number,
-    page = 1,
+    page = "1",
   ): Promise<MoviesReleaseDates> {
     const url = `${this.originUrl}${id}/release_dates?language=${this.language}&region=${this.region}&page=${page}`;
 
@@ -197,7 +197,7 @@ export class MoviesService {
   }
 
   //Get Movie Reviews by deifned id
-  async getMoviesReviewsByID(id: number, page = 1): Promise<MoviesReviews> {
+  async getMoviesReviewsByID(id: number, page = "1"): Promise<MoviesReviews> {
     const url = `${this.originUrl}${id}/reviews?language=${this.language}&region=${this.region}&page=${page}`;
 
     const res = await fetch(url, this.options)
@@ -212,7 +212,7 @@ export class MoviesService {
   }
 
   //Get Similar Movie by deifned id
-  async getMoviesSimilarByID(id: number, page = 1): Promise<MoviesSimilar> {
+  async getMoviesSimilarByID(id: number, page = "1"): Promise<MoviesSimilar> {
     const url = `${this.originUrl}${id}/similar?language=${this.language}&region=${this.region}&page=${page}`;
 
     const res = await fetch(url, this.options)
