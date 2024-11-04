@@ -7,10 +7,20 @@
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
+  "dependencies": {    
+  "dotenv": "^16.4.5",
+  "drizzle-orm": "^0.35.3",
+  "@neondatabase/serverless": "^0.10.1"
+},
   "devDependencies": {
     "turbo": "^2.2.3",
-    "typescript": "5.5.4"
+    "typescript": "5.5.4",
+    "drizzle-kit": "^0.26.2"
   },
+  "packages": [
+    "apps/*",
+    "packages/*"
+  ],
   "packageManager": "pnpm@8.15.6",
   "engines": {
     "node": ">=18"
