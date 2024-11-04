@@ -1,6 +1,6 @@
 import { IsIn, IsNotEmpty, IsOptional } from 'class-validator';
 import { MovieList } from 'src/movies/movies.service';
-import { MoviesDeatilsOtherTypes } from 'src/types/movies/movies_details_other_type';
+import { MoviesDeatilsOtherTypes } from '@global-types/movies/movies_details_other_type';
 
 
 const allowedMovieTypes = ['now_playing', 'popular', 'top_rated', 'upcoming']

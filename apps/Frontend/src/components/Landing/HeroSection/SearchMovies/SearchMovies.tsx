@@ -1,9 +1,8 @@
 "use client"
 import { Input } from "@/components/ui/input";
-import { SearchMovieObject } from "@/types/search/search.type";
 import { useState } from "react";
-
-
+import { SearchMovieObject } from "@global-types/search/search.type";
+import searchMovies from "./SearchMoviesFunction";
 
 const SearchMovies: React.FC = () => {
     const [keywordInputValue, setkeywordInputValue] = useState("");
@@ -13,11 +12,10 @@ const SearchMovies: React.FC = () => {
         setkeywordInputValue(keyword)
         
         if(keyword && keyword !== ""){
-            const res = await fetch(`http://localhost:3000/search/movie?query=${keyword}`)
-            const movies:SearchMovieObject = await res.json()
+            const searchResult = await searchMovies(keyword)
 
-            if (movies.total_results > 1 ){
-                return setMovies(movies)
+            if (searchResult.total_results > 1 ){
+                return setMovies(searchResult)
             }
         };
         

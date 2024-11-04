@@ -1,6 +1,6 @@
 {
-  "id": "3aac2759-f77c-454a-a22d-69a47158a158",
-  "prevId": "ef3036e3-ca24-4ab7-bd20-d845535639f4",
+  "id": "8825ce25-8330-4880-b7a1-41058bf7e2fd",
+  "prevId": "3aac2759-f77c-454a-a22d-69a47158a158",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -8,8 +8,8 @@
       "name": "postss",
       "schema": "",
       "columns": {
-        "id": {
-          "name": "id",
+        "ids": {
+          "name": "ids",
           "type": "serial",
           "primaryKey": true,
           "notNull": true

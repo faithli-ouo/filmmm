@@ -1,6 +1,6 @@
 import { Transform } from "class-transformer";
 import { IsIn, IsNumber, IsOptional } from "class-validator";
-import { TrendingTypes } from "src/types/trending/trending.type";
+import { TrendingTypes } from "@global-types/trending/trending.type";
 
 
 const allowedTrendingTypes = ['movies', 'actors']

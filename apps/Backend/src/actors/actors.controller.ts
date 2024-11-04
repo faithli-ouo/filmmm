@@ -11,7 +11,7 @@ import { ActorsService } from './actors.service';
 import {
   ActorsDetailsObject,
   PopularActorsObject,
-} from 'src/types/actors/actors.type';
+} from '@global-types/actors/actors.type';
 import { ActorOtherDetailsTypeDTO } from './dto/actors_types_dto';
 import {
   ActorsCombinedCreditsObject,
@@ -21,7 +21,7 @@ import {
   ActorsOthersObject,
   ActorsSocialIdObject,
   ActorsTranslationsObject,
-} from '../types/actors/actors.other.type';
+} from '@global-types/actors/actors.other.type';
 
 @Controller('actors')
 export class ActorsController {

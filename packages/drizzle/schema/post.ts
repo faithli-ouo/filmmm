@@ -6,7 +6,7 @@ import {
   } from 'drizzle-orm/pg-core';
   
   export const posts = pgTable('postss', {
-    id: serial('id').primaryKey(),
+    id: serial('ids').primaryKey(),
     content: text('content'),
     mediaUrl: text('media_url'),
     createdAt: timestamp('created_at').notNull().defaultNow(),

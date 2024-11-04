@@ -12,7 +12,7 @@ import {
   MoviesOtherDetailsTypeDTO,
   MovieTypesDTO,
 } from 'src/movies/dto/movies_types_dto';
-import { MovieDetailsObject } from 'src/types/movies/movies_details_type';
+import { MovieDetailsObject } from '@global-types/movies/movies_details_type';
 import {
   MoviesAlternativeTitles,
   MoviesCredits,
@@ -29,8 +29,8 @@ import {
   MoviesTranslations,
   MoviesVideos,
   MoviesWatchProviders,
-} from 'src/types/movies/movies_details_other_type';
-import { MoviesResultObject } from 'src/types/movies/movies.types';
+} from '@global-types/movies/movies_details_other_type';
+import { MoviesResultObject } from '@global-types/movies/movies.types';
 
 @Controller('movies')
 export class MoviesController {

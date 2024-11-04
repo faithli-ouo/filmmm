@@ -6,11 +6,11 @@ import {
   ActorsMoviesCreditsObject,
   ActorsSocialIdObject,
   ActorsTranslationsObject,
-} from 'src/types/actors/actors.other.type';
+} from '@global-types/actors/actors.other.type';
 import {
   ActorsDetailsObject,
   PopularActorsObject,
-} from 'src/types/actors/actors.type';
+} from '@global-types/actors/actors.type';
 
 
 

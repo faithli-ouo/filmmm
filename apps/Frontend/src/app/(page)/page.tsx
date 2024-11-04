@@ -1,6 +1,6 @@
-import HeroSection from "@/components/Landing/HeroSection/Hero";
-import SearchMovies from "@/components/Landing/HeroSection/SearchMovies";
-import { MoviesResultObject } from "@/types/movies/movies.types";
+import HeroSection from "@/components/Landing/HeroSection/Hero/Hero";
+import SearchMovies from "@/components/Landing/HeroSection/SearchMovies/SearchMovies";
+import { MoviesResultObject } from "@global-types/movies/movies.types";
 
 
 export default async function Home() {

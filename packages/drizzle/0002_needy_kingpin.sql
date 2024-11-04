@@ -1,0 +1,1 @@
+ALTER TABLE "postss" RENAME COLUMN "id" TO "ids";

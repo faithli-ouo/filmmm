@@ -5,7 +5,7 @@ import {
   SearchCompanyObject,
   SearchKeywordObject,
   SearchMovieObject,
-} from 'src/types/search/search.type';
+} from '@global-types/search/search.type';
 
 @Injectable()
 export class SearchService {

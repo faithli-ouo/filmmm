@@ -1,6 +1,6 @@
 import {  Injectable } from '@nestjs/common';
-import { MoviesResultObject } from 'src/types/movies/movies.types';
-import { MovieDetailsObject } from 'src/types/movies/movies_details_type';
+import { MoviesResultObject } from '@global-types/movies/movies.types';
+import { MovieDetailsObject } from '@global-types/movies/movies_details_type';
 import {
   MoviesAlternativeTitles,
   MoviesCredits,
@@ -16,7 +16,7 @@ import {
   MoviesTranslations,
   MoviesVideos,
   MoviesWatchProviders,
-} from 'src/types/movies/movies_details_other_type';
+} from '@global-types/movies/movies_details_other_type';
 
 
 export type MovieList = 'now_playing' | 'popular' | 'top_rated' | 'upcoming';

@@ -1,5 +1,5 @@
 import { drizzle } from 'drizzle-orm/node-postgres';
-import { DrizzleDB } from 'src/types/db/db.type';
+import { DrizzleDB } from '@global-types/db/db.type';
 
 export const DrizzleAsyncProvider = 'DrizzleAsyncProvider';
 

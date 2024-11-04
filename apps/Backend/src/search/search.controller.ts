@@ -15,7 +15,7 @@ import {
   SearchGETResponseTypes,
   SearchKeywordObject,
   SearchMovieObject,
-} from 'src/types/search/search.type';
+} from '@global-types/search/search.type';
 
 @Controller('search')
 export class SearchController {

@@ -8,7 +8,7 @@ import {
 } from '@nestjs/common';
 import { TrendingService } from './trending.service';
 import { TrendingQueriesDTO, TrendingTypesDTO } from './dto/trending_dto';
-import { TrendingActorsObject, TrendingGETResponseTypes, TrendingMoviesObject } from 'src/types/trending/trending.type';
+import { TrendingActorsObject, TrendingGETResponseTypes, TrendingMoviesObject } from '@global-types/trending/trending.type';
 
 @Controller('trending')
 export class TrendingController {

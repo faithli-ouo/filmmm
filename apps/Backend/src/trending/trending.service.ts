@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { TrendingActorsObject, TrendingMoviesObject } from 'src/types/trending/trending.type';
+import { TrendingActorsObject, TrendingMoviesObject } from '@global-types/trending/trending.type';
 
 @Injectable()
 export class TrendingService {

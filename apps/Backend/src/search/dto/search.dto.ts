@@ -1,6 +1,6 @@
 import { Transform } from "class-transformer";
 import { IsIn, IsNotEmpty, IsOptional } from "class-validator";
-import { SearchTypes } from "src/types/search/search.type";
+import { SearchTypes } from "@global-types/search/search.type";
 
 const allowedSearchTypes = ['collection', 'movie', 'actor', 'company', 'keyword']
 
