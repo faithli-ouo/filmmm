@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1730096093094,
+      "tag": "0000_minor_runaways",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1730102309065,
+      "tag": "0001_abandoned_hulk",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1730740207484,
+      "tag": "0002_needy_kingpin",
+      "breakpoints": true
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "name": "@filmmm/types",
+  "version": "1.0.0",
+  "description": "",
+  "files": ["index.ts"]
+}
