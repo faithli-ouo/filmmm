@@ -1,19 +1,20 @@
 import { Hono } from "hono";
 import { MoviesService } from "../../services/movies/movies.service";
-import { findAllMoviesQueryZod, findMovieByIdParamsZod, findMovieByIdTypeParamsZod, findMovieByIdTypeQueryZod } from "./dto/movies.dto";
+import { MoviesDTO } from "./dto/movies.dto";
 
 
 const app = new Hono();
 const movieService = new MoviesService();
+const dto = new MoviesDTO();
 
 // Find All Movies
-app.get("/", findAllMoviesQueryZod, async (c) => {
-  const { type, page = "1" } = c.req.valid("query");
+app.get("/", dto.AllMoviesQuery(), async (c) => {
+  const { type, page = 1 } = c.req.valid("query");
   return c.json(await movieService.getMovies(type, page));
 });
 
 // Find Movie By ID
-app.get("/:id", findMovieByIdParamsZod, async (c) => {
+app.get("/:id", dto.MovieByIdParams(), async (c) => {
   const { id } = c.req.valid("param");
 
   return c.json(await movieService.getMoviesDetailsByID(id));
@@ -22,11 +23,11 @@ app.get("/:id", findMovieByIdParamsZod, async (c) => {
 // Find Movie By ID & Types
 app.get(
   "/:id/:type",
-  findMovieByIdTypeParamsZod,
-  findMovieByIdTypeQueryZod,
+  dto.MovieByIdTypeParams(),
+  dto.MovieByIdTypeQuery(),
   async (c) => {
     const { id, type } = c.req.valid("param");
-    const { page } = c.req.valid("query");
+    const { page = 1 } = c.req.valid("query");
 
     switch (type) {
       case "alternative_titles":
@@ -48,13 +49,13 @@ app.get(
         return c.json(await movieService.getMoviesIncludedListsByID(id, page));
 
       case "recommendations":
-        return c.json(await movieService.getMoviesRecommendationsByID(id));
+        return c.json(await movieService.getMoviesRecommendationsByID(id, page));
 
       case "release_date":
-        return c.json(await movieService.getMoviesReleaseDatesByID(id));
+        return c.json(await movieService.getMoviesReleaseDatesByID(id, page));
 
       case "reviews":
-        return c.json(await movieService.getMoviesReviewsByID(id));
+        return c.json(await movieService.getMoviesReviewsByID(id, page));
 
       case "similar":
         return c.json(await movieService.getMoviesSimilarByID(id, page));

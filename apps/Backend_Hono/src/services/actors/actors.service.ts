@@ -7,7 +7,6 @@ import {
   ActorsTranslationsObject,
   ActorsDetailsObject,
   PopularActorsObject,
-  TMDBError,
 } from '@filmmm/types';
 import TMDBFetchHandle from "../tmdb/fetch.service";
 
@@ -24,7 +23,7 @@ export class ActorsService {
     },
   };
 
-  async getAllPopularActors(page = "1"): Promise<PopularActorsObject> {
+  async getAllPopularActors(page = 1): Promise<PopularActorsObject> {
     const url = `${this.originUrl}popular?language=${this.language}&page=${page}`;
     return await TMDBFetchHandle<PopularActorsObject>(url, this.options)
   }

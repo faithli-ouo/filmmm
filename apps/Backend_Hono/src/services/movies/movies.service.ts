@@ -15,7 +15,6 @@ import {
   MoviesWatchProviders,
   MovieDetailsObject,
   MoviesResultObject,
-  TMDBError,
 } from "@filmmm/types";
 import TMDBFetchHandle from "../tmdb/fetch.service";
 
@@ -36,7 +35,7 @@ export class MoviesService {
   //Get Movielist by defined types: "now_playing" | "popular" | "top_rated" | "upcoming"
   async getMovies(
     type: MovieList,
-    page: string
+    page: number
   ): Promise<MoviesResultObject> {
     const url = `${this.originUrl}${type}?language=${this.language}&region=${this.region}&page=${page}`;
 
@@ -92,7 +91,7 @@ export class MoviesService {
   //Get Movie Inclueded List by deifned id
   async getMoviesIncludedListsByID(
     id: number,
-    page = "1"
+    page: number
   ): Promise<MoviesIncludedList> {
     const url = `${this.originUrl}${id}/lists?page=${page}`;
 
@@ -102,7 +101,7 @@ export class MoviesService {
   //Get Movie Recommendations by deifned id
   async getMoviesRecommendationsByID(
     id: number,
-    page = 1
+    page: number
   ): Promise<MoviesRecomendations> {
     const url = `${this.originUrl}${id}/recommendations?language=${this.language}&region=${this.region}&page=${page}`;
 
@@ -112,7 +111,7 @@ export class MoviesService {
   //Get Movie Release Dates by deifned id
   async getMoviesReleaseDatesByID(
     id: number,
-    page = 1
+    page: number
   ): Promise<MoviesReleaseDates> {
     const url = `${this.originUrl}${id}/release_dates?language=${this.language}&region=${this.region}&page=${page}`;
 
@@ -122,7 +121,7 @@ export class MoviesService {
   //Get Movie Reviews by deifned id
   async getMoviesReviewsByID(
     id: number,
-    page = 1
+    page: number
   ): Promise<MoviesReviews> {
     const url = `${this.originUrl}${id}/reviews?language=${this.language}&region=${this.region}&page=${page}`;
 
@@ -132,7 +131,7 @@ export class MoviesService {
   //Get Similar Movie by deifned id
   async getMoviesSimilarByID(
     id: number,
-    page = "1"
+    page: number
   ): Promise<MoviesSimilar> {
     const url = `${this.originUrl}${id}/similar?language=${this.language}&region=${this.region}&page=${page}`;
 
