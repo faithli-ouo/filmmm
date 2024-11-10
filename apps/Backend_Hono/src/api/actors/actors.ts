@@ -8,7 +8,7 @@ const dto = new ActorsDTO();
 
 //Find All Pupular Actors
 app.get("/popular", dto.AllPopularActors(), async (c) => {
-  const { page = 1 } = c.req.valid("query");
+  const { page } = c.req.valid("query");
   return c.json(await actors.getAllPopularActors(page));
 });
 

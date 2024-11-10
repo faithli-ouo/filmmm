@@ -9,7 +9,7 @@ const dto = new MoviesDTO();
 
 // Find All Movies
 app.get("/", dto.AllMoviesQuery(), async (c) => {
-  const { type, page = 1 } = c.req.valid("query");
+  const { type, page } = c.req.valid("query");
   return c.json(await movieService.getMovies(type, page));
 });
 

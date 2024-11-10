@@ -4,7 +4,7 @@ import { z } from "zod";
 export const pageSchema = z.object({
     page: z.preprocess(
         (a) => (a == null ? undefined : parseInt(a as string, 10)),
-        z.number().positive().optional()
+        z.number().positive().optional().default(1)
     ),
 });
 

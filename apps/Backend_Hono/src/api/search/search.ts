@@ -10,7 +10,7 @@ const dto = new SearchDTO();
 app.get('/:type',dto.SearchParams(), dto.SearchQuery(), async(c) => {
 
     const { type } = c.req.valid('param')
-    const { query, include_adult = false, year, page = 1 } = c.req.valid('query');
+    const { query, include_adult = false, year, page } = c.req.valid('query');
 
     switch (type) {
         case 'collection':
