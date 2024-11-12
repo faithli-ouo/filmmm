@@ -8,11 +8,10 @@ import trending from './trending/trend'
 const app = new Hono()
 
 // API Route 
-app
-.route('/movies', movies)
-.route('/actors', actors)
-.route('./search', search)
-.route('./trending', trending)
+app.route('/movies', movies)
+app.route('/actors', actors)
+app.route('/search', search)
+app.route('/trending', trending)
 
 
 

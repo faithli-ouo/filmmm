@@ -1,4 +1,5 @@
 import { zValidator } from "@hono/zod-validator"
+import { HTTPException } from "hono/http-exception";
 import { number, object, z } from "zod"
 import { IdSchema, pageSchema } from "zod/tmdbGlobal/tmdbGlobal.schema";
 
@@ -36,7 +37,12 @@ export class MoviesDTO {
     AllMoviesQuery() { // Example helper method
         return zValidator('query', z.object({
             ...pageSchema.shape, ...movieTypeSchema.shape
-        }));
+        }), (result, c) => {
+            if (!result.success) {
+                console.log("fuck");
+                
+              }
+        });
     }
     
     MovieByIdParams() {

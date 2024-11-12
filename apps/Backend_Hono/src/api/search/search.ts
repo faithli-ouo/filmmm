@@ -15,7 +15,7 @@ app.get('/:type',dto.SearchParams(), dto.SearchQuery(), async(c) => {
     switch (type) {
         case 'collection':
           
-          return c.json(search.getSearchCollection(
+          return c.json(await search.getSearchCollection(
             query,
             include_adult,
             page,
@@ -23,7 +23,7 @@ app.get('/:type',dto.SearchParams(), dto.SearchQuery(), async(c) => {
 
         case 'movie':
           
-          return c.json(search.getSearchMovie(
+          return c.json(await search.getSearchMovie(
             query,
             include_adult,
             page,
@@ -33,7 +33,7 @@ app.get('/:type',dto.SearchParams(), dto.SearchQuery(), async(c) => {
 
         case 'actor':
           
-          return c.json(search.getSearchActor(
+          return c.json(await search.getSearchActor(
             query,
             include_adult,
             page,
@@ -41,14 +41,14 @@ app.get('/:type',dto.SearchParams(), dto.SearchQuery(), async(c) => {
 
         case 'company':
           
-          return c.json(search.getSearchCompany(
+          return c.json(await search.getSearchCompany(
             query,
             page,
           ));
 
         case 'keyword':
 
-          return c.json(search.getSearchKeyword(
+          return c.json(await search.getSearchKeyword(
             query,
             page,
           ));

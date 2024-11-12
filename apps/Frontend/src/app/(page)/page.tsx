@@ -1,18 +1,21 @@
 import HeroSection from "@/components/Landing/HeroSection/Hero/Hero";
 import SearchMovies from "@/components/Landing/HeroSection/SearchMovies/SearchMovies";
-import { MoviesResultObject } from "@global-types/movies/movies.types";
+import { MoviesResultObject } from "@filmmm/types";
 
 
 export default async function Home() {
-  const res = await fetch('http://localhost:3000/movies?type=now_playing&page=1');
-  const movies: MoviesResultObject = await res.json();
+  
+  const movies: MoviesResultObject = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL!}/movies?type=now_playing&page=1`, {cache: 'force-cache'})
+  .then(async (res) => res.json())
+  
+  
+
 
   for (let index = 2; index < movies.total_pages; index++) {
-    const afterRes = await fetch(`http://localhost:3000/movies?type=now_playing&page=${index}`);
-    const afterMovies: MoviesResultObject = await afterRes.json()
+    const afterMovies: MoviesResultObject = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL!}/movies?type=now_playing&page=${index}`, {cache: 'force-cache'})
+    .then(async (res) => await res.json());
     movies.results = [...movies.results, ...afterMovies.results] 
   }
-  
   
   
 

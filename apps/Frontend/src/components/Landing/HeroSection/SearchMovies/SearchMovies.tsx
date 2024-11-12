@@ -6,21 +6,25 @@ import searchMovies from "./SearchMoviesFunction";
 
 const SearchMovies: React.FC = () => {
     const [keywordInputValue, setkeywordInputValue] = useState("");
-    const [movies, setMovies] = useState<SearchMovieObject | null>()
+    const [movies, setMovies] = useState<SearchMovieObject | null>(null)
 
     const handleOnchange = async(keyword: string | "") => {
-        
-        if(keyword && keyword !== ""){
-            const searchResult = await searchMovies(keyword)
+        setkeywordInputValue(keyword);
 
-            if (searchResult.total_results > 1 ){
-                return setMovies(searchResult)
+        if (keyword && keyword !== "") {
+            const searchResult = await searchMovies(keyword);
+            console.log(searchResult);
+            
+            if (searchResult.total_results > 0) { // Should be > 0, not 1
+              setMovies(searchResult);
+            } else {
+              setMovies(null); // Clear movies if no results
             }
+          } else {
+            setMovies(null); // Clear movies if input is empty
+          }
         };
-        
-        return setMovies(null)
-    };
-
+    
     const handleOnblur = () => {
         setMovies(null)
         setkeywordInputValue("")
@@ -33,7 +37,7 @@ const SearchMovies: React.FC = () => {
             <div className="static">
 
                 <Input name="keywordInput" type="text" placeholder="輸入關鍵字" className="h-10 text-white font-semibold" value={keywordInputValue}
-                onChange={(e) => {handleOnchange(e.target.value)}} onBlur={handleOnblur}
+                onChange={(e) => handleOnchange(e.target.value)} onBlur={handleOnblur}
                 />
                 {movies?.results &&
                 <div className="border-x-[1px] border-b-[1px] absolute w-full h-full text-white px-2 py-2 rounded-b-md ease-in-out animate-out animate-pulse overflow-y-scroll">

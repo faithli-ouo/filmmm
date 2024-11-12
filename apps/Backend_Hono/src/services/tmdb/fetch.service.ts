@@ -13,7 +13,7 @@ interface Options {
 async function TMDBErrorHandle(res: Response): Promise<void> {
     if (!res.ok) {
         const errorData = (await res.json()) as TMDBError;
-        throw new HTTPException(errorData.status_code as StatusCode, {message:`${res.status} ${res.statusText}: ${errorData.status_message}`});
+        throw new HTTPException(res.status as StatusCode, {message:`${res.status} ${res.statusText}: ${errorData.status_message}`});
     }
 }
 
