@@ -1,5 +1,6 @@
-import HeroSection from "@/components/Landing/HeroSection/Hero/Hero";
-import SearchMovies from "@/components/Landing/HeroSection/SearchMovies/SearchMovies";
+
+import HeroSection from "@/components/Pages/Landing/HeroSection/Hero/Hero";
+import SearchMovies from "@/components/Pages/Landing/HeroSection/SearchMovies/SearchMovies";
 import { MoviesResultObject } from "@filmmm/types";
 
 

@@ -27,7 +27,7 @@ export default function PageHeader() {
             <ul className="flex space-x-4 text-xl font-semibold">
               {navs.map((nav) => (
                 <li key={nav.name}>
-                  <Link href={nav.path} className="hover:text-blue-600">
+                  <Link href={nav.path} prefetch={true} className="hover:text-blue-600">
                     {nav.name}
                   </Link>
                 </li>
